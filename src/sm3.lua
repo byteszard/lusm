@@ -9,7 +9,7 @@
 
 sm3 = {}
 
-local core = require("core")
+local lib = require("lib")
 
 ---
 --- 摘要计算
@@ -18,7 +18,7 @@ local core = require("core")
 ---
 --- return: 十六进制字符串
 function sm3.digest(plain)
-    return core.wsm.sm3_digest(plain)
+    return lib.wsm.sm3_digest(plain)
 end
 
 return sm3

@@ -8,13 +8,13 @@
 
 sm2 = {}
 
-local core = require("core")
+local lib = require("lib")
 
 --- SM2秘钥对生成函数
 ---
 --- return: d, p  d: 私钥， p：公钥
 function sm2.generate_key()
-    return core.wsm.sm2_generate_key()
+    return lib.wsm.sm2_generate_key()
 end
 
 --- SM2秘钥对批量生成函数
@@ -23,7 +23,7 @@ end
 function sm2.generate_keys(n)
     i = 1
     repeat
-        local private, public = core.wsm.sm2_generate_key()
+        local private, public = lib.wsm.sm2_generate_key()
         print("(" .. private .. "," .. public .. ")")
         i = i + 1
     until (i > n)
@@ -36,7 +36,7 @@ end
 ---
 --- return: 十六进制字符串
 function sm2.encrypt(public_key, plain)
-    return core.wsm.sm2_encrypt(public_key, plain)
+    return lib.wsm.sm2_encrypt(public_key, plain)
 end
 
 --- SM2解密函数，模式： c1c3c2
@@ -46,7 +46,7 @@ end
 ---
 --- return: 明文
 function sm2.decrypt(private_key, cipher)
-    return core.wsm.sm2_decrypt(private_key, cipher)
+    return lib.wsm.sm2_decrypt(private_key, cipher)
 end
 
 --- SM2加密函数，模式： c1c2c3
@@ -56,7 +56,7 @@ end
 ---
 --- return: 十六进制字符串
 function sm2.encrypt_c1c2c3(public_key, plain)
-    return core.wsm.sm2_encrypt_c1c2c3(public_key, plain)
+    return lib.wsm.sm2_encrypt_c1c2c3(public_key, plain)
 end
 
 --- SM2解密函数，模式： c1c2c3
@@ -66,7 +66,7 @@ end
 ---
 --- return: 明文
 function sm2.decrypt_c1c2c3(private_key, cipher)
-    return core.wsm.sm2_decrypt_c1c2c3(private_key, cipher)
+    return lib.wsm.sm2_decrypt_c1c2c3(private_key, cipher)
 end
 
 --- SM2签名函数
@@ -77,7 +77,7 @@ end
 ---
 --- return: 签名，ans1编码格式的十六进制字符
 function sm2.sign(private_key, public_key, plain)
-    return core.wsm.sm2_sign(private_key, public_key, plain)
+    return lib.wsm.sm2_sign(private_key, public_key, plain)
 end
 
 --- SM2验签函数
@@ -88,7 +88,7 @@ end
 ---
 --- return：boolean
 function sm2.verify(public_key, plain, signature)
-    return core.wsm.sm2_verify(public_key, plain, signature)
+    return lib.wsm.sm2_verify(public_key, plain, signature)
 end
 
 return sm2

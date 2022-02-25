@@ -8,14 +8,14 @@
 
 sm4 = {}
 
-local core = require("core")
+local lib = require("lib")
 
 ---
 --- 秘钥生成
 ---
 --- return: 长度32的十六进制字符串
 function sm4.generate_key()
-    return core.wsm.sm4_generate_key()
+    return lib.wsm.sm4_generate_key()
 end
 
 ---
@@ -23,7 +23,7 @@ end
 ---
 --- return: 长度32的十六进制字符串
 function sm4.generate_iv()
-    return core.wsm.sm4_generate_iv()
+    return lib.wsm.sm4_generate_iv()
 end
 
 --- ECB分组模式-加密
@@ -33,7 +33,7 @@ end
 ---
 --- return：密文，十六进制字符串
 function sm4.encrypt_ecb(key, plain)
-    return core.wsm.sm4_encrypt_ecb(key, plain)
+    return lib.wsm.sm4_encrypt_ecb(key, plain)
 end
 
 --- ECB分组模式-解密
@@ -43,7 +43,7 @@ end
 ---
 --- return：明文，十六进制字符串
 function sm4.decrypt_ecb(key, cipher)
-    return core.wsm.sm4_decrypt_ecb(key, cipher)
+    return lib.wsm.sm4_decrypt_ecb(key, cipher)
 end
 
 --- CBC分组模式-加密
@@ -54,7 +54,7 @@ end
 ---
 --- return：密文，十六进制字符串
 function sm4.encrypt_cbc(key, iv, plain)
-    return core.wsm.sm4_encrypt_cbc(key, iv, plain)
+    return lib.wsm.sm4_encrypt_cbc(key, iv, plain)
 end
 
 --- CBC分组模式-解密
@@ -65,7 +65,7 @@ end
 ---
 --- return：明文，十六进制字符串
 function sm4.decrypt_cbc(key, iv, cipher)
-    return core.wsm.sm4_decrypt_cbc(key, iv, cipher)
+    return lib.wsm.sm4_decrypt_cbc(key, iv, cipher)
 end
 
 --- CFB分组模式-加密
@@ -76,7 +76,7 @@ end
 ---
 --- return：密文，十六进制字符串
 function sm4.encrypt_cfb(key, iv, plain)
-    return core.wsm.sm4_encrypt_cfb(key, iv, plain)
+    return lib.wsm.sm4_encrypt_cfb(key, iv, plain)
 end
 
 --- CFB分组模式-解密
@@ -87,7 +87,7 @@ end
 ---
 --- return：明文，十六进制字符串
 function sm4.decrypt_cfb(key, iv, cipher)
-    return core.wsm.sm4_decrypt_cfb(key, iv, cipher)
+    return lib.wsm.sm4_decrypt_cfb(key, iv, cipher)
 end
 
 --- OFB分组模式-加密
@@ -98,7 +98,7 @@ end
 ---
 --- return：密文，十六进制字符串
 function sm4.encrypt_ofb(key, iv, plain)
-    return core.wsm.sm4_encrypt_ofb(key, iv, plain)
+    return lib.wsm.sm4_encrypt_ofb(key, iv, plain)
 end
 
 --- OFB分组模式-解密
@@ -109,7 +109,7 @@ end
 ---
 --- return：明文，十六进制字符串
 function sm4.decrypt_ofb(key, iv, cipher)
-    return core.wsm.sm4_decrypt_ofb(key, iv, cipher)
+    return lib.wsm.sm4_decrypt_ofb(key, iv, cipher)
 end
 
 --- CTR分组模式-加密
@@ -120,7 +120,7 @@ end
 ---
 --- return：密文，十六进制字符串
 function sm4.encrypt_ctr(key, iv, plain)
-    return core.wsm.sm4_encrypt_ctr(key, iv, plain)
+    return lib.wsm.sm4_encrypt_ctr(key, iv, plain)
 end
 
 --- CTR分组模式-解密
@@ -131,7 +131,7 @@ end
 ---
 --- return：明文，十六进制字符串
 function sm4.decrypt_ctr(key, iv, cipher)
-    return core.wsm.sm4_decrypt_ctr(key, iv, cipher)
+    return lib.wsm.sm4_decrypt_ctr(key, iv, cipher)
 end
 
 
