@@ -13,8 +13,8 @@ local lib = require("lib")
 --- SM2秘钥对生成函数
 ---
 --- return: d, p  d: 私钥， p：公钥
-function sm2.generate_key()
-    return lib.wsm.sm2_generate_key()
+function sm2.generate_keypair()
+    return lib.wsm.sm2_generate_keypair()
 end
 
 --- SM2秘钥对批量生成函数

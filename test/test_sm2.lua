@@ -7,7 +7,7 @@ local sm2 = require("sm2")
 
 print()
 print("-----------SM2: 随机秘钥对-----------")
-local prk, puk = sm2.generate_key()
+local prk, puk = sm2.generate_keypair()
 print("私钥：" .. prk)
 print("公钥：" .. puk)
 
