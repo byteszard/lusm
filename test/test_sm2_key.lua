@@ -12,7 +12,7 @@ function batch_generate_keys(n)
     i = 1
     repeat
         --local private, public = sm2.generate_key()
-        sm2.generate_key()
+        sm2.generate_keypair()
         if i % 10000 == 0 then
             print(i // 10000 .. "w : " .. os.date("%H:%M:%S"))
         end
